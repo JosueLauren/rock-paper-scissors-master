@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor </title>
+</head>
+<body>
+  <div class="itens-scores">
+    <div class="itens">
+      <p>ROCK</p>
+      <p>PAPER</p>
+      <p>SCISSORS</p>
+      <p>LIZARD</p>
+      <P>SPOCK</P>
+      </p>
+    </div>
+    <div class="scores">
+      <p class="title">SCORE</p>
+      <p class="number">0</p>
+    </div>
+  </div>  
+  <main class="content">
+    <div class="player">
+
+      <div onclick="play(event)" class="btn-container spock" data-identify="spock">
+        <div class="btn-interna"  data-identify="spock">
+          <img src="./images/icon-spock.svg" alt="spock" data-identify="spock">
+        </div>
+      </div>
+ 
+      <div onclick="play(event)" class="btn-container scissors" data-identify="scissors">
+        <div class="btn-interna" data-identify="scissors">
+          <img src="./images/icon-scissors.svg" alt="scissors" data-identify="scissors">
+        </div>
+      </div>
+
+      <div onclick="play(event)" class="btn-container paper" data-identify="paper">
+        <div class="btn-interna" data-identify="paper">
+          <img src="./images/icon-paper.svg" alt="paper" data-identify="paper">
+        </div>
+      </div>
+
+      <div onclick="play(event)"  class="btn-container lizard" data-identify="lizard">
+        <div class="btn-interna" data-identify="lizard">
+          <img src="./images/icon-lizard.svg" alt="lizard" data-identify="lizard">
+        </div>
+      </div>
+
+      <div onclick="play(event)" class="btn-container rock" data-identify="rock">
+        <div class="btn-interna"  data-identify="rock">
+          <img src="./images/icon-rock.svg" alt="rock"  data-identify="rock">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="in-game">
+
+      <div class="div-you"></div>
+
+      <div class="div-result"></div>
+
+      <div class="div-house ">
+        <div class="shadown"></div>
+      </div>
+      
+    </div>
+  </main>
+
+  <div class="div-btn">
+    <button onclick="showModal()" class="btn-rules">RULES</button>
+  </div>
+
+  <div class="back-modal" onclick="closeModal()">
+    <div class="modal-rules">
+      <div class="div-title-btn-close">
+        <span>RULES</span>
+        <button onclick="closeModal()"><img src="./images/icon-close.svg" alt="icon-close"></button>
+      </div>
+      <img src="./images/image-rules-bonus.svg" alt="icon-rules-bonus">
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

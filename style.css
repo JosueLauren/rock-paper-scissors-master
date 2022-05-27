@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+
+:root {
+
+--font-family: 'Barlow Semi Condensed', sans-serif;
+
+--Dark-Text: hsl(229, 25%, 31%);
+--Score-Text: hsl(229, 64%, 46%);
+--Header-Outline: hsl(217, 16%, 45%);
+
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    
+}
+
+body{
+    background-image: repeating-radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+}
+
+.itens-scores {
+    border: 1px solid var(--Header-Outline);
+    border-radius: 10px;
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.itens-scores .itens {
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 1.3rem;
+}
+
+.itens-scores .scores {
+    color:  hsl(237, 49%, 15%);
+    background-color: #fff;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ .scores .number {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.scores .title {
+    color: var(--Score-Text);
+}
+
+.player {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    margin: 50px auto 0px auto;
+    width: 60%;
+    background-image: url(./images/bg-pentagon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.btn-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+} 
+
+.btn-interna {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 7px solid rgb(241, 225, 225);
+   
+}
+
+.paper {
+    background-color: hsl(230, 89%, 65%);
+    box-shadow: 0px 7px 0px hsl(230, 89%, 62%);
+    top: 110px;
+    left: 15px;
+}
+
+.paper:active, .paper:active .btn-interna{
+    box-shadow: none;
+    border-top: 0px;
+}
+
+.rock {
+    background-color: hsl(349, 70%, 56%);
+    box-shadow: 0px 7px 0px hsl(349, 71%, 52%);
+    left: 100px;
+    top: 80px;
+
+}
+
+.rock:active, .rock:active .btn-interna{
+    box-shadow: none;
+    border-top: 0px;
+}
+
+.scissors {
+    background-color:  hsl(40, 84%, 53%);
+    box-shadow: 0px 7px 0px hsl(39, 89%, 49%);
+
+}
+
+.scissors:active, .scissors:active .btn-interna{
+    box-shadow: none;
+    border-top: 0px;
+}
+
+.lizard {
+    background-color: hsl(261, 72%, 63%);
+    box-shadow: 0px 7px 0px  hsl(261, 73%, 60%);
+    top: 80px;
+    left: 40px;
+}
+
+.lizard:active, .lizard:active .btn-interna{
+    box-shadow: none;
+    border-top: 0px;
+}
+
+.spock {
+    background-color: hsl(189, 58%, 57%);
+    box-shadow: 0px 7px 0px  hsl(189, 59%, 53%);
+    top: 110px;
+    right: 15px;
+}
+
+.spock:active, .spock:active .btn-interna{
+    box-shadow: none;
+    border-top: 0px;
+}
+
+.div-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin: 20px auto;
+}
+
+.btn-rules {
+    padding: 7px 35px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: hsl(237, 49%, 15%);
+    border: 2px solid var(--Header-Outline);
+    color: #fff;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.btn-rules:hover {
+    border-color: #fff;
+}
+
+.back-modal {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 9;
+    display: none;
+}
+
+.modal-rules {
+    background-color: #fff;
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 10;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+    display: none;
+}
+
+.div-title-btn-close {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-title-btn-close > span {
+    color: var(--Dark-Text);
+    font-size: 1.5rem;
+}
+
+.div-title-btn-close > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.in-game {
+    display: none;
+    justify-content: center;
+    height: 550px;
+}
+
+.div-you, .div-house {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-position{
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.width-in-game {
+   transform: scale(1.5);
+}
+
+.title-you, .title-house {
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 150px;
+}
+
+.div-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.div-result h3 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.div-result button {
+    background-color: #fff;
+    color: var(--Score-Text);
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.div-result button:hover {
+    opacity: 0.8;
+}
+
+.back-winner {
+    background-image: repeating-radial-gradient(hsla(237, 49%, 15%, 0.2) 1%, hsla(214, 47%, 23%, 0.2) 15%);
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2 !important;
+}
+
+.shadown{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: hsl(237, 49%, 15%);
+    position: absolute;
+    z-index: -3;
+}
+
+/* mobile */
+
+@media screen and (max-width: 700px) {
+    .itens-scores {
+        width: 80%;
+    }
+
+    .player{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .div-btn {
+        justify-content: center;
+        margin: 50px auto;
+        padding: 0;
+    }
+
+    .btn-rules {
+        padding: 10px 50px;
+    }
+
+    .div-result {
+        position: relative;
+        top: 340px;
+        height: 200px;
+        width: 90%;
+    }
+
+    .div-result h3 {
+        font-size: 3rem;
+    }
+
+    .div-result button {
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .width-in-game {
+        transform: scale(1);
+     }
+
+     .shadown {
+         width: 100px;
+         height: 100px;
+     }
+
+     .div-house {
+         right: 80px;
+         bottom: 80px;
+         position: relative;
+     }
+     .div-you {
+         left: 80px;
+         bottom: 80px;
+         position: relative;
+     }
+
+     .title-house, .title-you { 
+        position: relative;
+        top: 110px;
+        text-align: center;
+        font-size: 1rem;
+     }
+
+     main.content {
+        overflow: hidden;
+     }
+
+}
