@@ -5,7 +5,7 @@ let containerYou = document.querySelector('div.div-you')
 let containerResult = document.querySelector('div.div-result')
 let containerHouse = document.querySelector('div.div-house')
 
-numberScore.innerHTML = window.localStorage.getItem('result-game')
+numberScore.innerHTML = window.localStorage.getItem('result-game') || '0'
 
 function showModal(){
     document.querySelector('.modal-rules').style.display = 'block'
