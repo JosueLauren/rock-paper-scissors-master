@@ -87,7 +87,7 @@ body{
 }
 
 .btn-container:hover {
-    opacity: 0.8;
+    transform: scale(1.2);
 }
 
 .btn-interna {
